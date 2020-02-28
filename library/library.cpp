@@ -14,16 +14,16 @@ using namespace std;
 //NOTE: also make sure you save patron and book data to disk any time you make a change to them
 //NOTE: for files where data is stored see constants.h BOOKFILE and PATRONFILE
 
-//std::vector<book> books = new std::vector<book>();
-//std::vector<patron> patrons = {};
+vector<book> books;
+vector<patron> patrons;
 
 /*
  * clear books and patrons containers
  * then reload them from disk 
  */
 void reloadAllData() {
-//	loadBooks(&books, BOOKFILE);
-//	loadPatrons(&patrons, PATRONFILE);
+	loadBooks(books, BOOKFILE.c_str());
+	loadPatrons(patrons, PATRONFILE.c_str());
 
 }
 
