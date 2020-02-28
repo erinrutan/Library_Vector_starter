@@ -17,7 +17,9 @@ using namespace std;
  * clear books and patrons containers
  * then reload them from disk 
  */
-void reloadAllData(){
+void reloadAllData() {
+//	loadBooks(&books, char *filename);
+//	loadPatrons();
 
 }
 
@@ -41,7 +43,7 @@ void reloadAllData(){
  * 		   BOOK_NOT_IN_COLLECTION
  *         TOO_MANY_OUT patron has the max number of books allowed checked out
  */
-int checkout(int bookid, int patronid){
+int checkout(int bookid, int patronid) {
 	return SUCCESS;
 }
 
@@ -57,7 +59,7 @@ int checkout(int bookid, int patronid){
  * returns SUCCESS checkout worked
  * 		   BOOK_NOT_IN_COLLECTION
  */
-int checkin(int bookid){
+int checkin(int bookid) {
 	return SUCCESS;
 }
 
@@ -70,7 +72,7 @@ int checkin(int bookid){
  * return 
  *    the patron_id of the person added
  */
-int enroll(std::string &name){
+int enroll(std::string &name) {
 	return 0;
 }
 
@@ -79,7 +81,7 @@ int enroll(std::string &name){
  * (ie. if 3 books returns 3)
  * 
  */
-int numbBooks(){
+int numbBooks() {
 	return 0;
 }
 
@@ -87,7 +89,7 @@ int numbBooks(){
  * the number of patrons in the patrons container
  * (ie. if 3 patrons returns 3)
  */
-int numbPatrons(){
+int numbPatrons() {
 	return 0;
 }
 
@@ -96,7 +98,7 @@ int numbPatrons(){
  *returns a positive number indicating how many books are checked out 
  *        or PATRON_NOT_ENROLLED         
  */
-int howmanybooksdoesPatronHaveCheckedOut(int patronid){
+int howmanybooksdoesPatronHaveCheckedOut(int patronid) {
 	return 0;
 }
 
@@ -106,7 +108,7 @@ int howmanybooksdoesPatronHaveCheckedOut(int patronid){
  * returns SUCCESS found it and name in name
  *         PATRON_NOT_ENROLLED no patron with this patronid
  */
-int whatIsPatronName(std::string &name,int patronid){
+int whatIsPatronName(std::string &name, int patronid) {
 	return SUCCESS;
 }
 
