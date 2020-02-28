@@ -7,19 +7,23 @@
 #include "../includes_usr/library.h"
 #include "../includes_usr/datastructures.h"
 #include "../includes_usr/fileIO.h"
+#include "../includes_usr/constants.h"
 using namespace std;
 
 //NOTE: please ensure patron and book data are loaded from disk before calling the following
 //NOTE: also make sure you save patron and book data to disk any time you make a change to them
 //NOTE: for files where data is stored see constants.h BOOKFILE and PATRONFILE
 
+//std::vector<book> books = new std::vector<book>();
+//std::vector<patron> patrons = {};
+
 /*
  * clear books and patrons containers
  * then reload them from disk 
  */
 void reloadAllData() {
-//	loadBooks(&books, char *filename);
-//	loadPatrons();
+//	loadBooks(&books, BOOKFILE);
+//	loadPatrons(&patrons, PATRONFILE);
 
 }
 

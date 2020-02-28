@@ -20,6 +20,34 @@ int loadBooks(std::vector<book> &books, const char *filename) {
 		return NO_BOOKS_IN_LIBRARY;
 	}
 
+	while (!myfile.eof()) {
+			getline(myfile, line); //get a line from the file Name, Midterm,Final
+			ss.str(line);
+
+			//get rid of the old values
+			myStudentData.clear();
+
+			//!!!!!! NO ERROR CHECK HERE DONT ASSUMME PERFECT DATA 		!!!!!!
+			//!!!!!! if any of the following fail retValue should		!!!!!!
+			//!!!!!! be set to false, break out of loop, then return;	!!!!!!
+
+			//get the name
+			getline(ss, myStudentData.name, char_to_search_for);
+
+			//get midterm
+			getline(ss, token, char_to_search_for);
+			myStudentData.midterm = stringToInt(token.c_str());
+
+			//get final
+			getline(ss, token, char_to_search_for);
+			myStudentData.final = stringToInt(token.c_str());
+
+			//finally add to array
+			allstudentData.push_back(myStudentData);
+
+			//clear stream so it will work for next read
+			ss.clear();
+
 	myfile.close();
 
 	return SUCCESS;
@@ -37,14 +65,16 @@ int saveBooks(std::vector<book> &books, const char *filename) {
 	if (!myfile.is_open()) {
 		return COULD_NOT_OPEN_FILE;
 	}
-	std::string line;
-	stringstream ss(line);
-	while (!myfile.eof()) {				//exits when reach end of file
-		getline(myfile, line);			//gets a line up to '/n' char
-		myfile << line;
-	}
-	myfile << "something";
-	myfile.close();
+	string mydata;
+		for (int var = 0; var < books.size(); ++var) {
+			mydata = to_string(books[var].book_id) + ',' + books[var].title +
+					',' + books[var].author + ',' + to_string(books[var].state)
+					+ ',' + to_string(books[var].loaned_to_patron_id);
+			myfile << mydata << std::endl;
+		}
+    if (myfile.is_open()) {
+    	myfile.close();
+    }
 	return SUCCESS;
 }
 
